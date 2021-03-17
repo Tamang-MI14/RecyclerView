@@ -16,6 +16,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 
 import java.util.LinkedList;
+import java.util.Objects;
 
 public class MainActivity extends AppCompatActivity {
 private final LinkedList<String> mWordList = new LinkedList<>();
@@ -49,6 +50,7 @@ private final LinkedList<String> mWordList = new LinkedList<>();
 // Put initial data into the word list.
         for (int i = 0; i < 20; i++) {
             mWordList.addLast("Word " + i);
+        }
             // Get a handle to the RecyclerView.
             mRecyclerView = findViewById(R.id.recyclerview);
 // Create an adapter and supply the data to be displayed.
@@ -57,7 +59,7 @@ private final LinkedList<String> mWordList = new LinkedList<>();
             mRecyclerView.setAdapter(mAdapter);
 // Give the RecyclerView a default layout manager.
             mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
-        }
+
     }
 
     @Override
@@ -77,6 +79,11 @@ private final LinkedList<String> mWordList = new LinkedList<>();
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
+            mWordList.clear();
+            for (int i = 1; i < 21; i++) {
+                mWordList.add("Word " + i);
+            }
+            Objects.requireNonNull(mRecyclerView.getAdapter()).notifyDataSetChanged();
             return true;
         }
 
