@@ -1,4 +1,5 @@
 # RecyclerView
 
 
-![master](https://user-images.githubusercontent.com/47654208/111632358-7d71bd80-881c-11eb-9170-eb3351de5066.gif)
+![task3](https://user-images.githubusercontent.com/47654208/111634084-44d2e380-881e-11eb-8e00-eff4f779a7ba.gif)
+
